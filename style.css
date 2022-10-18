@@ -40,7 +40,7 @@ header p{
 } 
 
 
-.input_box,.generate_btn , .download_btn{    /* or we can use form :where(input, button) */
+.input_box,.generate_btn , .download_btn , a{    /* or we can use form :where(input, button) */
   width: 100%;
   height: 55px;
   border: none;
@@ -59,12 +59,16 @@ header p{
 .input_box::placeholder{
   color: #999;
 }
-.generate_btn , .download_btn{
+.generate_btn {
   color: #fff;
   cursor: pointer;
   margin-top: 20px;
   font-size: 17px;
   background: #3498DB;
+}
+.my{
+  background-color:#3498DB ;
+  width:100%;
 }
 .qr-code{
   opacity: 0;

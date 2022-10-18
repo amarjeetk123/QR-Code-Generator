@@ -4,7 +4,7 @@ let generateBtn = document.querySelector(".generate_btn")
 let download_btn = document.querySelector(".download_btn")
 let qrImg = document.querySelector(".qr-code img");
 
-
+let previewImg = document.querySelector("qr-code img")
 
 generateBtn.addEventListener("click", () => {
     user_input = qrInput.value.trim();
@@ -15,25 +15,41 @@ generateBtn.addEventListener("click", () => {
     qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${user_input}`;
     qrImg.addEventListener("load", () => {
         main.classList.add("active");
-        main.classList.add("change_btn")
+        // main.classList.add("change_btn")
     });
-
- 
+let saveUrl = qrImg.src
+ creatSavebtn(saveUrl)
 });
 
+
+
 // code for Downloading the QR code
-download_btn.addEventListener("click" , ()=>{
-    // console.log("Amarjeet Kumar")
-    
-    const canvas = document.createElement("canvas");  
-    const img_link = document.createElement("a");
-    img_link.download = "image.jpg";
-    img_link.href = canvas.toDataURL();
-    img_link.click();
-})
+const creatSavebtn = (saveUrl) =>{
+// download_btn.href = qrImg.src
+// link.download = 'qrcode';
+// download_btn.innerHTML = "sskksk"
+// console.log(download_btn.href)
+const link = document.createElement('a');
+link.id = 'save-link';
+link.classList.add("my")
+  
+link.href = saveUrl;
+link.download = 'qrcode';
+link.innerHTML = 'Save Image';
+document.querySelector("#gen").appendChild(link);
+}
 
 
-
+// const createSaveBtn = () => {
+//     const link = document.createElement('a');
+//     link.id = 'save-link';
+//     link.classList =
+//       'bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5';
+//     link.href = qrImg.src;
+//     link.download = 'qrcode';
+//     link.innerHTML = 'Save Image';
+//     document.getElementById('generated').appendChild(link);
+//   };
 
 qrInput.addEventListener("input", () => {
     if(qrInput.value.trim() == "") {
