@@ -11,7 +11,9 @@
 Live Link:- [Click here!](https://amarjeet-qr-code-generator.netlify.app/)
 
 Picture of my project:-
-![](./image/image.png)
+![](./Image/1st.png/)
+
+![](./Image/2nd.png/)
 
 ## Technology Used:-
   - ` HTML ` 
@@ -19,4 +21,4 @@ Picture of my project:-
   - ` JS ` 
 
 
-### It took 2 hours to complete.
+### It took 2.5 hours to complete.
